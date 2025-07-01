@@ -25,3 +25,5 @@ output_path = r"C:\Users\user\Desktop\sjm\data\kits_00000_testtest.nii.gz"
 nib.save(new_nii, output_path)
 
 print(f"Processed NIfTI file saved to: {output_path}")
+
+print("done!")
