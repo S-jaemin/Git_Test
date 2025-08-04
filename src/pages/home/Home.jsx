@@ -13,7 +13,7 @@ function Home() {
             async (position) => {
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
-                const APIKEY = import.meta.env.VITE_WEATHER_API_KEY;
+                const APIKEY = "b492d86f42027732ec924ffc667cc6c9"; // API key를 명시하는 방법 말고 다른 좋은 방법?
 
                 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metric`;
                 const uvUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${APIKEY}`;
