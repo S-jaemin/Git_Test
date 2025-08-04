@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-App</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    const rootElement = document.getElementById("root");
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<WeatherApp />);
+
+    const APIKEY = "b492d86f42027732ec924ffc667cc6c9"; // API key를 명시하는 방법 말고 다른 좋은 방법?
+
+    function WeatherApp() {
+        const [lat, setLat] = React.useState(null);
+        const [lng, setLng] = React.useState(null);
+        const [weather, setWeather] = React.useState(null);
+        const [uvWeather, uvSetWeather] = React.useState(null);
+        
+        React.useEffect(() => {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    setLat(lat);
+                    setLng(lng);
+
+                    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${APIKEY}&units=metric`;
+                    const uvUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lng}&appid=${APIKEY}`; // 필요한 API가 있다면, 여기에 추가하세요
+                    
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) throw new Error("fetch 오류!")
+                            return response.json()})
+                        .then(data => {
+                            setWeather(data); // 날씨 데이터 Obj
+                        })
+                        .catch(error => {
+                            console.log("날씨 Obj파일 불러오기 실패");
+                        });
+                    fetch(uvUrl)
+                        .then(response => {
+                            if (!response.ok) throw new Error("오류!")
+                            return response.json()})
+                        .then(data => {
+                            uvSetWeather(data); // UV 날씨 데이터 Obj
+                        })
+                        .catch(error => {
+                            console.log("UV 데이터 불러오기 실패.");
+                        });
+                },
+                () => {
+                    alert("위치 정보를 찾을 수 없습니다.")
+                }
+            );
+        },[]);
+
+        return (
+            <div className="weather-container">
+                <div className="section1">
+                </div>
+                <div className="section2">
+                </div>
+                <div className="section3">
+                </div>
+                <div className="section4">
+                    <span>{weather?.main?.temp}°C</span>
+                    {/* API 데이터 사용 예시 */}
+                    {/*JSX에서 주석은 이렇게 씁니다*/}
+                    {/*하하하하하하하*/}
+                </div>
+                <div className="section5">
+                </div>
+            </div>
+        );
+    };
+</script>
+</html>

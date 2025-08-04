@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #0870b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.weather-container {
+    width: 600px;
+    height: 900px;
+    padding: 15px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-sizing: border-box;
+}
+
+.section1, .section2, .section3, .section4, .section5 {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.section1 { height: 120px; }
+.section1:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+
+.section2 { height: 160px; }
+.section2:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+.section3 {
+    height: 235px;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+.section3:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+.section3-box {
+    width: 285px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.section4_5 {
+    display: flex;
+    gap: 10px;
+}
+.section4 {
+    flex: 1;
+    height: 335px;
+}
+.section4:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+.section5 {
+    flex: 1;
+    height: 335px;
+}
+.section5:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}

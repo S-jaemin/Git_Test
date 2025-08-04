@@ -1,0 +1,34 @@
+.weather-clear {
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-clear::before {
+    content: "☀️";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 100px;
+    animation: sunRise 10s linear infinite;
+}
+
+@keyframes sunRise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.raindrop {
+    position: absolute;
+    top: -100px;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(transparent, #87ceeb);
+    animation: rain 0.8s linear infinite;
+    opacity: 0.7;
+    z-index: 10;
+}
+
+@keyframes rain {
+    0% { top: -100px; opacity: 0.7; }
+    100% { top: 100vh; opacity: 0.2; }
+}

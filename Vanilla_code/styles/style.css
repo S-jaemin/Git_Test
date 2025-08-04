@@ -1,0 +1,59 @@
+@import "reset.css";
+@import "variables.css";
+@import "jds_style.css";
+@import "section3.css";
+@import "section4.css";
+@import "five.css";
+@import "section1.css";
+@import "weather.css";
+
+body {
+  background-color: #0870b1;
+  font-family: sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-container {
+  background: rgba(255, 255, 255, 0.2);
+  width: 500px;
+  margin: 10px auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+}
+
+.section1 {
+  background: none;
+  box-shadow: none;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f2f2f3;
+    background: lightblue;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.column {
+  display: flex;
+  gap: 6px;
+}

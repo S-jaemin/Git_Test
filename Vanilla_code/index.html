@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+
+    <!--전체 container-->
+    <div class="weather-container">
+      <div class="section section1">
+        <span class="header">Weather forecast</span>
+        <span class="weather-city"></span>
+        <div class="weather-box">
+          <span class="weather-temp"></span>
+          <div class="weather-temp-box-container">
+            <div class="weather-temp-box">
+              <span class="weather-temp-max"></span>
+              <span class="weather-temp-min"></span>
+            </div>
+            <span class="weather-main"></span>
+          </div>
+        </div>
+      </div>
+      <div class="section section2">
+        <div class="forecast__heading">
+          <span>Today's weather</span>
+          <span id="time"></span>
+        </div>
+        <div id="forecast__timeframe">
+          <button
+            id="daily_btn"
+            class="forecast__btn selected"
+            data-content="daily"
+          >
+            Today
+          </button>
+          <button id="hourly_btn" class="forecast__btn" data-content="hourly">
+            Hourly
+          </button>
+          <button id="weekly_btn" class="forecast__btn" data-content="weekly">
+            14 day
+          </button>
+        </div>
+        <div id="daily" class="forecast__display">
+          <div id="today" class="forecast__day__div">
+            <span id="today_text">Today</span>
+            <div class="forecast__day__div__temp">
+              <img src="" id="icon" />
+              <i class="fa-solid fa-arrow-up"></i>
+              <span class="max_temp"></span>
+              <i class="fa-solid fa-arrow-down"></i>
+              <span class="min_temp"></span>
+            </div>
+            <div>
+              <i class="fa-solid fa-cloud-rain"></i>
+              <i class="fa-solid fa-location-arrow"></i>
+              <span class="wind"></span>
+            </div>
+          </div>
+          <div id="tomorrow" class="forecast__day__div">
+            <span id="tomorrow_text">Tomorrow</span>
+            <div class="forecast__day__div__temp">
+              <img src="" id="icon" />
+              <i class="fa-solid fa-arrow-up"></i>
+              <span class="max_temp"></span>
+              <i class="fa-solid fa-arrow-down"></i>
+              <span class="min_temp"></span>
+            </div>
+            <div>
+              <i class="fa-solid fa-cloud-rain"></i>
+              <span class="rain"></span>
+              <i class="fa-solid fa-location-arrow"></i>
+              <span class="wind"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="hourly" class="forecast__display">
+          <div id="hourly_display"></div>
+        </div>
+
+        <div id="weekly" class="forecast__display">
+          <div id="weekly_display">Probably Hot! 😫🌡️🔥💀</div>
+        </div>
+      </div>
+
+      <!-- section 3 -->
+      <div class="column section3">
+        <div class="section3__card">
+          <div class="section3__card-title">Wind</div>
+          <div class="section3__card-compass">
+            <img
+              class="section3__card-compass__img"
+              src="svg/wind_compass.svg"
+            />
+            <div class="section3__card-compass__text">
+              <p class="section3__card-compass__wind-value">loading...</p>
+              <p>m/s</p>
+            </div>
+            <img
+              class="section3__card-compass__wind-arrow"
+              src="svg/arrow.svg"
+            />
+          </div>
+        </div>
+        <div class="section3__card">
+          <div class="section3__card-title">Humidity</div>
+          <div class="section3__card-compass">
+            <img
+              class="section3__card-compass__img"
+              src="svg/humidity_compass.svg"
+            />
+            <div class="section3__card-compass__text">
+              <p class="section3__card-compass__humidity-value">loading...</p>
+              <p>%</p>
+            </div>
+            <img
+              class="section3__card-compass__humidity-arrow"
+              src="svg/arrow.svg"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- end of section 3 -->
+      <div class="column section45">
+        <div class="section section4">
+          <div class="dewBox">
+            <span>Dew point</span>
+            <div class="section4Main">　</div>
+          </div>
+          <div class="uvBox">
+            <span>UV Index</span>
+            <div class="uvStatus">
+              <div class="section4Main">　</div>
+              <div class="section4Sub">　</div>
+            </div>
+            <div class="uvBar">
+              <div class="uvBarMask"></div>
+              <div class="uvCircle"></div>
+            </div>
+          </div>
+          <div class="viBox">
+            <span>Visibility</span>
+            <div class="section4Main">　</div>
+          </div>
+        </div>
+
+        <div class="section section5">
+          <div class="section5__box">
+            <div>Pressure</div>
+            <div id="pressu"></div>
+          </div>
+          <div class="section5__box exception">
+            <div class="box">
+              <div>Sunrise</div>
+              <div id="rise"></div>
+            </div>
+            <div id="line"></div>
+            <div class="box">
+              <div>Sunset</div>
+              <div id="set"></div>
+            </div>
+          </div>
+          <div class="section5__box">
+              <div class="moon">
+                <div id="picture"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--전체 container-->
+
+    <script src="js/app.js"></script>
+    <script type="module" src="js/two.js"></script>
+    <script type="module" src="js/section3.js"></script>
+    <script src="js/four.js"></script>
+    <script src="js/five.js"></script>
+    <script src="js/fivemoon.js"></script>
+    <script type="module" src="js/section1.js"></script>
+    <script src="js/weather.js"></script>
+    <script
+      src="https://kit.fontawesome.com/16ef1decbb.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
