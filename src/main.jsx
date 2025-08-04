@@ -11,5 +11,5 @@ createRoot(document.getElementById('root')).render(
         <App />
       </Router>
     </WeatherProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
